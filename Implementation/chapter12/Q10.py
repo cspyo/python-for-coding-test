@@ -20,13 +20,15 @@ def solution(key, lock):
     
     tmp = [item[:] for item in zero_padding] 
 
-    for _ in range(3):
+    for _ in range(4):
         for k in range(pad-m+1):
             for y in range(pad-m+1):
                 for i in range(k,k+m):
                     for j in range(y,y+m):
-                        if zero_padding[i][j]==0 and key[i-k][j-y]:
+                        if zero_padding[i][j]==0 and key[i-k][j-y]==1:
                             tmp[i][j]=1
+                        elif zero_padding[i][j]==1 and key[i-k][j-y]==1:
+                            tmp[i][j]=0
                 if is_unlock(m,n,tmp):
                     return True
                 tmp = [item[:] for item in zero_padding]
@@ -37,8 +39,8 @@ def solution(key, lock):
         
         
     
-key = [[0, 0, 0], [1, 0, 0], [0, 1, 1]]
-lock = [[1, 1, 1], [1, 1, 0], [1, 0, 1]]
+key = [[0, 0, 0], [0, 0, 0], [0, 0, 1]]
+lock = [[0, 1, 1], [1, 1, 1], [1, 1, 1]]
 print(solution(key, lock))
 
 
