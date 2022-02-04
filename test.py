@@ -1,47 +1,9 @@
-def is_unlock(m,n,tmp):
-    for i in range(n):
-        for j in range(n):
-            if tmp[i+m-1][j+m-1]==0:
-                return False
-    return True
-
-def key_rotated(array_2d):
-    list_of_tuples = zip(*array_2d[::-1])
-    return [list(elem) for elem in list_of_tuples]
-
-def solution(key, lock):
-    m = len(key)
-    n = len(lock)
-    pad=n+2*(m-1)
-    zero_padding = [[0]* pad for _ in range(pad)]
-    for i in range(n):
-        for j in range(n):
-            zero_padding[i+m-1][j+m-1] = lock[i][j]
-    
-    tmp = [item[:] for item in zero_padding] 
-
-    for _ in range(3):
-        for k in range(pad-m+1):
-            for y in range(pad-m+1):
-                for i in range(k,k+m):
-                    for j in range(y,y+m):
-                        if zero_padding[i][j]==0 and key[i-k][j-y]:
-                            tmp[i][j]=1
-                if is_unlock(m,n,tmp):
-                    return True
-                tmp = [item[:] for item in zero_padding]
-        key = key_rotated(key)
-    
-    return False
-                
-        
-        
-    
-key = [[0, 0, 0], [1, 0, 0], [0, 1, 1]]
-lock = [[1, 1, 1], [1, 1, 0], [1, 0, 1]]
-print(solution(key, lock))
+li = [[i*3+j for j in range(3)] for i in range(3)]
+li = list(zip(*li[::-1]))
+for item in li:
+	print(*item)
 
 
 
-## deepcopy 랑 슬라이싱하는거
-## 깊은 복사 얕은 복사 블로그에 정리하기
+
+# 결과

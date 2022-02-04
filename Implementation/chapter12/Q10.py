@@ -18,8 +18,10 @@ def solution(key, lock):
         for j in range(n):
             zero_padding[i+m-1][j+m-1] = lock[i][j]
     
+    # 2차원 리스트의 깊은 복사
     tmp = [item[:] for item in zero_padding] 
 
+    # 4 방향에 대해 확인
     for _ in range(4):
         for k in range(pad-m+1):
             for y in range(pad-m+1):
@@ -33,7 +35,6 @@ def solution(key, lock):
                     return True
                 tmp = [item[:] for item in zero_padding]
         key = key_rotated(key)
-    
     return False
                 
         
