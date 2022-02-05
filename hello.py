@@ -1,9 +1,3 @@
-
-
-a = [1,2,3]
-b = a.copy()
-
-b[0] = 3
-
-print(a)
-print(b)
+a=-1
+print(a//4)
+print(a%4)
