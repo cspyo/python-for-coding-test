@@ -16,33 +16,36 @@ def solution(n, build_frame):
     bo_list=[]
     result=[]
     for build in build_frame:
-        if build[3]:
-            if build[2]==0:
-                if check_gd(build[0], build[1], gd_list, bo_list):
-                    gd_list.append((build[0],build[1]))
-                    result.append([build[0], build[1], 0])
-            else:
-                if check_bo(build[0], build[1], gd_list, bo_list):
-                    bo_list.append((build[0],build[1]))
-                    result.append([build[0], build[1], 1])
-        else:
-            if build[2]==0:
-                gd_list.remove((build[0],build[1])) # 일단 삭제해
-                # 기둥 하나를 삭제하면 1.아래 있는 기둥, 2.위에 있는 보 두개
-                if check_gd(build[0], build[1]+1, gd_list, bo_list) and check_bo(build[0], build[1]+1, gd_list, bo_list) and check_bo(build[0]-1, build[1]+1, gd_list, bo_list):
-                    result.remove([build[0], build[1], 0])
+        x, y, what, operation = build
+        if operation: # 설치
+            if what==0: # 기둥
+                if check_gd(x, y, gd_list, bo_list):
+                    gd_list.append((x,y))
+                    result.append([x, y, 0])
+            else: # 보
+                if check_bo(x, y, gd_list, bo_list):
+                    bo_list.append((x,y))
+                    result.append([x, y, 1])
+        else: # 삭제
+            if what==0: # 기둥
+                gd_list.remove((x,y)) # 일단 삭제해
+                # 기둥 하나를 삭제하면 그 기둥과 관련있는 모든 것 ---> 여기도 잘못됨
+                # 여기 부분이 잘못됨
+                if check_gd(x, y-1, gd_list, bo_list) and check_gd(x, y+1, gd_list, bo_list) and check_bo(x-1, y, gd_list, bo_list) and check_bo(x, y, gd_list, bo_list) and check_bo(x-1, y+1, gd_list, bo_list) and check_bo(x, y+1, gd_list, bo_list):
+                    result.remove([x, y, 0])
                 else:
-                    gd_list.append((build[0], build[1]))
-            else:
-                bo_list.remove((build[0], build[1]))
-                # 보를 삭제하면 1.양쪽 위에 있는 기둥, 2.양쪽에 연결된 보
-                if check_gd(build[0], build[1], gd_list, bo_list) and check_gd(build[0]+1, build[1], gd_list, bo_list) and check_bo(build[0]-1, build[1], gd_list, bo_list) and check_bo(build[0]+1, build[1], gd_list, bo_list):
-                    result.remove([build[0], build[1], 1])
+                    gd_list.append((x, y))
+            else: # 보
+                bo_list.remove((x, y))
+                # 보를 삭제하면 그 보와 관련된 모든 것 ---> 이 생각이 잘못된듯
+                # 여기 부분이 잘못됨
+                if check_gd(x, y, gd_list, bo_list) and check_gd(x, y-1, gd_list, bo_list)  and check_gd(x+1, y, gd_list, bo_list) and check_gd(x+1, y-1, gd_list, bo_list) and check_bo(x-1, y, gd_list, bo_list) and check_bo(x+1, y, gd_list, bo_list):
+                    result.remove([x, y, 1])
                 else:
-                    bo_list.append((build[0],build[1]))
-    # print(gd_list)
-    # print(bo_list)                
-    # print(sorted(result))
+                    bo_list.append((x,y))
+    print(gd_list)
+    print(bo_list)                
+    print(sorted(result))
 
     
     
