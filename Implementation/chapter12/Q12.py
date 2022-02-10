@@ -1,6 +1,5 @@
 ## 개똥망 테스트케이스는 되는데 채점하면 엉망임
 
-
 def check_gd(x, y, gd_list, bo_list):
     if (x,y) in bo_list or (x-1,y) in bo_list or (x,y-1) in gd_list or y==0:
         return True

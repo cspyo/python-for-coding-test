@@ -1,6 +1,5 @@
 ## 개똥망 테스트케이스는 되는데 채점하면 엉망임
 
-
 def check_gd(x, y, gd_list, bo_list):
     if (x,y) in bo_list or (x-1,y) in bo_list or (x,y-1) in gd_list or y==0:
         return True
@@ -29,7 +28,7 @@ def solution(n, build_frame):
         else: # 삭제
             if what==0: # 기둥
                 gd_list.remove((x,y)) # 일단 삭제해
-                # 기둥 하나를 삭제하면 1.아래 있는 기둥, 2.위에 있는 보 두개
+                # 기둥 하나를 삭제하면 1.위에 있는 기둥, 2.위에 있는 보 두개
                 if check_gd(x, y+1, gd_list, bo_list) and check_bo(x, y+1, gd_list, bo_list) and check_bo(x-1, y+1, gd_list, bo_list):
                     result.remove([x, y, 0])
                 else:
