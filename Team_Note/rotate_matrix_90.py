@@ -11,7 +11,7 @@ def rotate_a_matrix_by_90_degree(a):
 
 def rotated(array_2d):
     list_of_tuples = zip(*array_2d[::-1])
-    return [list(elem) for elem in list_of_tuples]
+    return [list(item) for item in list_of_tuples]
     # return map(list, list_of_tuples)
 
 a = [
