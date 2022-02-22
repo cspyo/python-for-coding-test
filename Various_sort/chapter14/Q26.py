@@ -10,6 +10,7 @@
 
 # 해답을 봐버려서 우선순위 큐를 사용해서 항상 작은 두개를 골라내는거까지 알아버림
 # 구현은 성공~
+
 import heapq
 import sys
 f = sys.stdin.readline
