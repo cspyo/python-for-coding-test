@@ -1,5 +1,5 @@
 from bisect import bisect_left, bisect_right
-
+## bisect는 각각 리스트 a에 데이터 x를 삽입할 가장 왼, 오른쪽 인덱스를 반환함
 ## left_value <= x <= right_value 의 개수 반환
 def count_by_range(array, left_value, right_value):
     right = bisect_right(array, right_value)

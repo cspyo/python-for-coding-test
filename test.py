@@ -1,3 +1,6 @@
-# a = list(map(int, input()))
-a,b,c = int(input())
-print(a)
+a = ["a","b","c"]
+
+print(a[:2])
+
+
+
