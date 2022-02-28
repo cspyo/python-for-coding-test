@@ -1,8 +1,6 @@
 # 정수 삼각형
 # BOJ 1932
 
-
-
 n = int(input())
 data=[]
 for _ in range(n):

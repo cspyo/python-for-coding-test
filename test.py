@@ -1,2 +1,3 @@
-for i in range(10,0,-1):
-    print(i)
+a=[0]*10
+a[4:]=[1]
+print(a)
