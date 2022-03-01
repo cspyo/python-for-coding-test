@@ -9,7 +9,6 @@ jido = []
 for i in range(n):
     jido.append(list(map(int, f().split())))
 
-
 tmp_jido = [[0]*m for _ in range(n)]
 
 result=0

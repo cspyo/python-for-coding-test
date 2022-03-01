@@ -9,7 +9,7 @@ def bfs(graph, start, visited):
         for i in graph[v]:
             if not visited[i]:
                 queue.append(i)
-                bfs(graph, i, visited)
+                visited[i]=True
 
 
 graph = [
