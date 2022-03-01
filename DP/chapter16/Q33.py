@@ -14,8 +14,6 @@ for i in range(1,n+1):
     if i+data[i][0]<=n+1:
         dp[i+data[i][0]] = max(dp[i+data[i][0]], data[i][1]+dp[i])
         for j in range(i+data[i][0], n+2):
-            #dp[j] = max(dp[i+data[i][0]], dp[j])
-            dp[j] = dp[i+data[i][0]]
-
+            dp[j] = max(dp[i+data[i][0]], dp[j])
 
 print(max(dp))
