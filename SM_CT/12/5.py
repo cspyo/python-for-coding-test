@@ -1,5 +1,5 @@
 # 5번 다시
-# 빠르게 만들었당
+# 빠르게 만들었당 20분정도 걸림
 from collections import deque
 
 n = int(input())

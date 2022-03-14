@@ -13,7 +13,7 @@ def solution(food_times, k):
   # 음식 번호와 시간을 튜플형태로 삽입, 시간을 기준으로 최소힙 완성됨
   q=[]
   for i in range(len(food_times)):
-    heapq.heappush(q, (food_times[i],i+1))
+    heapq.heappush(q, (food_times[i], i+1))
   
   
   foods = len(food_times) # 남은 음식의 개수

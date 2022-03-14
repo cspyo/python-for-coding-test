@@ -22,7 +22,6 @@ for i in range(n):
         elif data[i][j]=='T':
             teacher.append((i,j))
 
-
 def find_student(x,y):
     nx=x
     ny=y

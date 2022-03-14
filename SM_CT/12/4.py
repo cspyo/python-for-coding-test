@@ -10,9 +10,9 @@ def sol(start):
     count=1
     now=start
     while not visited[now]:
-        count+=1
         visited[now]=True
         now+=data[now]
+        count+=1
     return count
 
 result=0

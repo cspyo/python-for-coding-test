@@ -13,7 +13,6 @@ for _ in range(m):
 
 d=[-1]*(n+1)
 
-
 queue = deque([x])
 d[x]=0
 while queue:
@@ -23,8 +22,6 @@ while queue:
             d[next]=d[now]+1
             queue.append(next)
     
-
-
 check=False
 for i in range(1,n+1):
     if d[i]==k:
