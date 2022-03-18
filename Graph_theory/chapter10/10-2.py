@@ -37,7 +37,7 @@ for edge in edges:
     cost, a, b = edge
     if find_parent(parent, a) != find_parent(parent, b):
         union_parent(parent, a, b)
-        max_cost = max(max_cost, cost)
+        max_cost = cost
         result+=cost
 
 print(result-max_cost)
