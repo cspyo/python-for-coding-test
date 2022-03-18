@@ -1,7 +1,7 @@
 x = 24
 y = 32
 
-''' GCD (Greatest Common Divisor) '''
+''' 최대공약수 '''
 def gcd(a, b):
     mod = a % b
     while mod > 0:

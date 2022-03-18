@@ -1,6 +1,6 @@
 import math
 
-''' Find all divisors of a number '''
+''' 약수 찾기 '''
 def find_all_divisors_of_a_number(x):
     result = []
     for i in range(1, int(math.sqrt(x)) + 1):

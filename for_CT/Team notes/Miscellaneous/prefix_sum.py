@@ -2,6 +2,7 @@ n = 5
 data = [10, 20, 30, 40, 50]
 
 ''' Make prefix sum array '''
+# 구간합
 summary = 0
 prefix_sum = [0]
 for i in data:

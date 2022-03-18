@@ -1,6 +1,6 @@
 import math
 
-''' Get all the prime factors '''
+''' 소인수 분해 '''
 def prime_factorization(x):
     result = []
     for i in range(2, int(math.sqrt(x)) + 1):

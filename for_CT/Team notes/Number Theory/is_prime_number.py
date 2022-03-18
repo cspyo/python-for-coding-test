@@ -1,6 +1,6 @@
 import math
 
-''' Check if a number is prime '''
+''' 소수인지 아닌지 판별 '''
 def is_prime_number(x):
     for i in range(2, int(math.sqrt(x)) + 1):
         if x % i == 0:

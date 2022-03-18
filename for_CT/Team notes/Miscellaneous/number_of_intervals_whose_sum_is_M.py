@@ -1,4 +1,5 @@
 ''' Find the number of intervals whose sum is M (using the two-pointer method). '''
+# 특정한 합을 가지는 부분 연속 수열 찾기
 n = 5
 m = 5
 data = [1, 2, 3, 2, 5]
