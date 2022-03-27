@@ -6,7 +6,7 @@ l, c = map(int, input().split())
 
 array = list(input().split())
 array.sort()
-print(array)
+
 for password in combinations(array, l):
     count=0
     for i in password:
