@@ -1,5 +1,6 @@
 # 트럭
 # https://www.acmicpc.net/problem/13335
+
 from collections import deque
 import sys
 f = sys.stdin.readline
