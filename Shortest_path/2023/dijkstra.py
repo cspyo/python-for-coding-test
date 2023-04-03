@@ -24,9 +24,11 @@ def dijkstra(start):
     hq.heappush(q, (distance[start], start))
     while (q):
         d, now = hq.heappop(q)
-        if (visited[now]):
+        if (distance[now] < d):
             continue
-        visited[now] = True
+        # if (visited[now]):
+        #     continue
+        # visited[now] = True
         for next_node, node_distance in graph[now]:
             cost = d + node_distance
             if (distance[next_node] > cost):
