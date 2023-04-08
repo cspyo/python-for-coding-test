@@ -1,5 +1,7 @@
 # 근손실
 # https://www.acmicpc.net/problem/18429
+# 브루트포스
+
 from itertools import permutations
 import sys
 f = sys.stdin.readline
